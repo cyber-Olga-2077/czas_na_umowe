@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Umowa Najmu</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.data_zawarcia.label }}<br>
+            {{ form.data_zawarcia(size=32) }} <br>
+            {% for error in form.data_zawarcia.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.imie_wynajmujacego.label }}<br>
+            {{ form.imie_wynajmujacego(size=32) }} <br>
+            {% for error in form.imie_wynajmujacego.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.nazwisko_wynajmujacego.label }}<br>
+            {{ form.nazwisko_wynajmujacego(size=32) }} <br>
+            {% for error in form.nazwisko_wynajmujacego.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.pesel_wynajmujacego.label }}<br>
+            {{ form.pesel_wynajmujacego(size=32) }} <br>
+            {% for error in form.pesel_wynajmujacego.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.imie_najemcy.label }}<br>
+            {{ form.imie_najemcy(size=32) }} <br>
+            {% for error in form.imie_najemcy.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.nazwisko_najemcy.label }}<br>
+            {{ form.nazwisko_najemcy(size=32) }} <br>
+            {% for error in form.nazwisko_najemcy.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.pesel_najemcy.label }}<br>
+            {{ form.pesel_najemcy(size=32) }} <br>
+            {% for error in form.pesel_najemcy.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.adres_lokalu.label }}<br>
+            {{ form.adres_lokalu(size=32) }} <br>
+            {% for error in form.adres_lokalu.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.data_zakonczenia_umowy.label }}<br>
+            {{ form.data_zakonczenia_umowy(size=32) }} <br>
+            {% for error in form.data_zakonczenia_umowy.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.dni_kaucji.label }}<br>
+            {{ form.dni_kaucji(size=32) }} <br>
+            {% for error in form.dni_kaucji.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.kwota_kaucji.label }}<br>
+            {{ form.kwota_kaucji(size=32) }} <br>
+            {% for error in form.kwota_kaucji.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.kwota_czynszu.label }}<br>
+            {{ form.kwota_czynszu(size=32) }} <br>
+            {% for error in form.kwota_czynszu.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.data_zaplaty_czynszu.label }}<br>
+            {{ form.data_zaplaty_czynszu(size=32) }} <br>
+            {% for error in form.data_zaplaty_czynszu.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

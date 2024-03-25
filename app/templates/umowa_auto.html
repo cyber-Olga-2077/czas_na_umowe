@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Umowa Sprzedaży Pojazdu</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+      <p>
+          {{ form.miejsce_zawarcia.label }}<br>
+          {{ form.miejsce_zawarcia(size=32) }}<br>
+          {% for error in form.miejsce_zawarcia.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+      </p>
+
+      <p>
+          {{ form.data_zawarcia.label }}<br>
+          {{ form.data_zawarcia(size=32) }}<br>
+          {% for error in form.data_zawarcia.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+      </p>
+
+      <p>
+          {{ form.imie_sprzedajacego.label }}<br>
+          {{ form.imie_sprzedajacego(size=32) }}<br>
+          {% for error in form.imie_sprzedajacego.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+      </p>
+
+      <p>
+          {{ form.nazwisko_sprzedajacego.label }}<br>
+          {{ form.nazwisko_sprzedajacego(size=32) }}<br>
+          {% for error in form.nazwisko_sprzedajacego.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+      </p>
+
+      <p>
+          {{ form.pesel_sprzedajacego.label }}<br>
+          {{ form.pesel_sprzedajacego(size=32) }}<br>
+          {% for error in form.pesel_sprzedajacego.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+      </p>
+
+      <p>
+          {{ form.imie_kupujacego.label }}<br>
+          {{ form.imie_kupujacego(size=32) }}<br>
+          {% for error in form.imie_kupujacego.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+      </p>
+
+      <p>
+          {{ form.nazwisko_kupujacego.label }}<br>
+          {{ form.nazwisko_kupujacego(size=32) }}<br>
+          {% for error in form.nazwisko_kupujacego.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+      </p>
+
+      <p>
+          {{ form.pesel_kupujacego.label }}<br>
+          {{ form.pesel_kupujacego(size=32) }}<br>
+          {% for error in form.pesel_kupujacego.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+      </p>
+
+      <p>
+          {{ form.marka_auta.label }}<br>
+          {{ form.marka_auta(size=32) }}<br>
+          {% for error in form.marka_auta.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+      </p>
+
+      <p>
+          {{ form.model_auta.label }}<br>
+          {{ form.model_auta(size=32) }}<br>
+          {% for error in form.model_auta.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+      </p>
+
+      <p>
+          {{ form.rok_produkcji.label }}<br>
+          {{ form.rok_produkcji(size=32) }}<br>
+          {% for error in form.rok_produkcji.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+      </p>
+
+      <p>
+          {{ form.numer_rejestracyjny.label }}<br>
+          {{ form.numer_rejestracyjny(size=32) }}<br>
+          {% for error in form.numer_rejestracyjny.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+      </p>
+
+      <p>
+          {{ form.przebieg.label }}<br>
+          {{ form.przebieg(size=32) }}<br>
+          {% for error in form.przebieg.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+      </p>
+            {{ form.numer_vim.label }}<br>
+            {{ form.numer_vim(size=32) }}<br>
+            {% for error in form.numer_vim.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.cena.label }}<br>
+            {{ form.cena(size=32) }}<br>
+            {% for error in form.cena.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

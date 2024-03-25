@@ -21,3 +21,22 @@ class UmowaNajmu(FlaskForm):
     data_zaplaty_czynszu = StringField('Data zapłaty czynszu', validators=[DataRequired()])
     data_zakonczenia_umowy = DateField('Data zakończenia umowy', validators=[DataRequired()])
     submit = SubmitField('Utwórz umowę najmu')
+
+class UmowaAuto(FlaskForm):
+
+    miejsce_zawarcia = StringField('Miejsce zawarcia', validators=[DataRequired()])
+    data_zawarcia = DateField('Data zawarcia', validators=[DataRequired()])
+    imie_sprzedajacego = StringField('Imię sprzedającego', validators=[DataRequired()])
+    nazwisko_sprzedajacego = StringField('Nazwisko sprzedającego', validators=[DataRequired()])
+    pesel_sprzedajacego = StringField('PESEL sprzedającego', validators=[DataRequired()])
+    imie_kupujacego = StringField('Imię kupującego', validators=[DataRequired()])
+    nazwisko_kupujacego = StringField('Nazwisko kupującego', validators=[DataRequired()])
+    pesel_kupujacego = StringField('PESEL kupującego', validators=[DataRequired()])
+    marka_auta = StringField('Marka auta', validators=[DataRequired()])
+    model_auta = StringField('Model auta', validators=[DataRequired()])
+    rok_produkcji = StringField('Rok produkcji', validators=[DataRequired()])
+    numer_rejestracyjny = StringField('Numer rejestracyjny', validators=[DataRequired()])
+    przebieg = StringField('Przebieg', validators=[DataRequired()])
+    numer_vim = StringField('Numer VIM', validators=[DataRequired()])
+    cena = StringField('Cena', validators=[DataRequired()])
+    submit = SubmitField('Utwórz umowę sprzedaży auta')

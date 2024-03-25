@@ -55,8 +55,37 @@ def create_pdf_pojazd(data):
     text.textLine(f"{data['imie_sprzedajacego']} {data['nazwisko_sprzedajacego']}, PESEL: {data['pesel_sprzedajacego']}, zwanym dalej Sprzedającym")
     text.textLine("a")
     text.textLine(f"{data['imie_kupujacego']} {data['nazwisko_kupujacego']}, PESEL: {data['pesel_kupujacego']}, zwanym dalej Kupującym.")
-    text.textLine(f"Umowa tyczy się pojazdu marki {data['marka_auta']}, model {data['model_auta']}, rok produkcji {data['rok_produkcji']}, o numerze VIM {data['numer_vim']}.")
+    text.textLine(f"Umowa tyczy się pojazdu marki {data['marka_auta']}, model {data['model_auta']}, rok produkcji {data['rok_produkcji']},")
+    text.textLine(f"o numerze VIM {data['numer_vim']}.")
     text.textLine(f"W dniu zawarcia umowy przebieg auta wynosi {data['przebieg']}km. Cena wynosi {data['cena']} złotych. ")
+
+    c.drawText(text)
+    c.showPage()
+    c.save()
+
+    return response
+
+
+def create_pdf_kupno(data):
+
+    response = make_response()
+    response.headers['Content-Type'] = 'application/pdf'
+    response.headers['Content-Disposition'] = 'attachment; filename=umowa_sprzedazypojazdu.pdf'
+
+
+    c = canvas.Canvas(response.stream, pagesize=letter)
+
+    pdfmetrics.registerFont(TTFont('Verdana', 'Verdana.ttf'))
+    c.setFont("Verdana", 10)
+
+    text = c.beginText(40, 750)
+    text.textLine(f"{data['miejsce_zawarcia']}, {data['data_zawarcia'].strftime('%d-%m-%Y')}")
+    text.textLine("Umowa Sprzedaży Pojazdu")
+    text.textLine("Umowa zostaje zawarta między:")
+    text.textLine(f"{data['imie_sprzedajacego']} {data['nazwisko_sprzedajacego']}, PESEL: {data['pesel_sprzedajacego']}, zwanym dalej Sprzedającym")
+    text.textLine("a")
+    text.textLine(f"{data['imie_kupujacego']} {data['nazwisko_kupujacego']}, PESEL: {data['pesel_kupujacego']}, zwanym dalej Kupującym.")
+
 
     c.drawText(text)
     c.showPage()

@@ -40,3 +40,16 @@ class UmowaAuto(FlaskForm):
     numer_vim = StringField('Numer VIM', validators=[DataRequired()])
     cena = StringField('Cena', validators=[DataRequired()])
     submit = SubmitField('Utwórz umowę sprzedaży auta')
+
+
+class UmowaKupno(FlaskForm):
+
+    miejsce_zawarcia = StringField('Miejsce zawarcia', validators=[DataRequired()])
+    data_zawarcia = DateField('Data zawarcia', validators=[DataRequired()])
+    imie_sprzedajacego = StringField('Imię sprzedającego', validators=[DataRequired()])
+    nazwisko_sprzedajacego = StringField('Nazwisko sprzedającego', validators=[DataRequired()])
+    pesel_sprzedajacego = StringField('PESEL sprzedającego', validators=[DataRequired()])
+    imie_kupujacego = StringField('Imię kupującego', validators=[DataRequired()])
+    nazwisko_kupujacego = StringField('Nazwisko kupującego', validators=[DataRequired()])
+    pesel_kupujacego = StringField('PESEL kupującego', validators=[DataRequired()])
+    submit = SubmitField('Utwórz umowę kupna')

@@ -20,53 +20,117 @@
           {% endfor %}
       </p>
 
-      <p>
+     <p>
           {{ form.imie_sprzedajacego.label }}<br>
           {{ form.imie_sprzedajacego(size=32) }}<br>
           {% for error in form.imie_sprzedajacego.errors %}
           <span style="color: red;">[{{ error }}]</span>
           {% endfor %}
-      </p>
+     </p>
 
-      <p>
+     <p>
           {{ form.nazwisko_sprzedajacego.label }}<br>
           {{ form.nazwisko_sprzedajacego(size=32) }}<br>
           {% for error in form.nazwisko_sprzedajacego.errors %}
           <span style="color: red;">[{{ error }}]</span>
           {% endfor %}
-      </p>
+     </p>
 
       <p>
+        {{ form.miasto_sprzedajacego.label }}<br>
+        {{ form.miasto_sprzedajacego(size=32) }}<br>
+        {% for error in form.miasto_sprzedajacego.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.ulica_sprzedajacego.label }}<br>
+        {{ form.ulica_sprzedajacego(size=32) }}<br>
+        {% for error in form.ulica_sprzedajacego.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    
+    <p>
+        {{ form.numer_sprzedajacego.label }}<br>
+        {{ form.numer_sprzedajacego(size=32) }}<br>
+        {% for error in form.numer_sprzedajacego.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
           {{ form.pesel_sprzedajacego.label }}<br>
           {{ form.pesel_sprzedajacego(size=32) }}<br>
           {% for error in form.pesel_sprzedajacego.errors %}
           <span style="color: red;">[{{ error }}]</span>
           {% endfor %}
-      </p>
+    </p>
 
-      <p>
+    <p>
+        {{ form.dowod_sprzedajacego.label }}<br>
+        {{ form.dowod_sprzedajacego(size=32) }}<br>
+        {% for error in form.dowod_sprzedajacego.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
           {{ form.imie_kupujacego.label }}<br>
           {{ form.imie_kupujacego(size=32) }}<br>
           {% for error in form.imie_kupujacego.errors %}
           <span style="color: red;">[{{ error }}]</span>
           {% endfor %}
-      </p>
+    </p>
 
-      <p>
+    <p>
           {{ form.nazwisko_kupujacego.label }}<br>
           {{ form.nazwisko_kupujacego(size=32) }}<br>
           {% for error in form.nazwisko_kupujacego.errors %}
           <span style="color: red;">[{{ error }}]</span>
           {% endfor %}
-      </p>
+    </p>
 
-      <p>
+    <p>
+        {{ form.miasto_kupujacego.label }}<br>
+        {{ form.miasto_kupujacego(size=32) }}<br>
+        {% for error in form.miasto_kupujacego.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.ulica_kupujacego.label }}<br>
+        {{ form.ulica_kupujacego(size=32) }}<br>
+        {% for error in form.ulica_kupujacego.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    
+    <p>
+        {{ form.numer_kupujacego.label }}<br>
+        {{ form.numer_kupujacego(size=32) }}<br>
+        {% for error in form.numer_kupujacego.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
           {{ form.pesel_kupujacego.label }}<br>
           {{ form.pesel_kupujacego(size=32) }}<br>
           {% for error in form.pesel_kupujacego.errors %}
           <span style="color: red;">[{{ error }}]</span>
           {% endfor %}
-      </p>
+    </p>
+
+    <p>
+        {{ form.dowod_kupujacego.label }}<br>
+        {{ form.dowod_kupujacego(size=32) }}<br>
+        {% for error in form.dowod_kupujacego.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
 
       <p>
           {{ form.marka_auta.label }}<br>
@@ -101,15 +165,9 @@
       </p>
 
       <p>
-          {{ form.przebieg.label }}<br>
-          {{ form.przebieg(size=32) }}<br>
-          {% for error in form.przebieg.errors %}
-          <span style="color: red;">[{{ error }}]</span>
-          {% endfor %}
-      </p>
-            {{ form.numer_vim.label }}<br>
-            {{ form.numer_vim(size=32) }}<br>
-            {% for error in form.numer_vim.errors %}
+            {{ form.numer_vin.label }}<br>
+            {{ form.numer_vin(size=32) }}<br>
+            {% for error in form.numer_vin.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
@@ -121,6 +179,22 @@
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
         </p>
+
+    <p>
+        {{ form.przebieg_start.label }}<br>
+        {{ form.przebieg_start(size=32) }}<br>
+        {% for error in form.przebieg_start.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+
+    <p>
+        {{ form.przebieg_pokonany.label }}<br>
+        {{ form.przebieg_pokonany(size=32) }}<br>
+        {% for error in form.przebieg_pokonany.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
 
         <p>{{ form.submit() }}</p>
     </form>

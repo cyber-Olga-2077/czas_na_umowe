@@ -50,4 +50,6 @@ class UmowaAuto(FlaskForm):
     cena = StringField('Cena', validators=[DataRequired()])
     czy_przebieg = BooleanField('Czy chcesz dodać informację o przebiegu?')
     przebieg = StringField('Przebieg w chwili nabycia przez sprzedającego')
+    czy_uwagi = BooleanField('Czy chcesz dodać uwagi?')
+    uwagi = StringField('Uwagi: ')
     submit = SubmitField('Utwórz umowę sprzedaży auta')

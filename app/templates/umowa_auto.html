@@ -196,6 +196,22 @@
             {% endfor %}
         </p>
 
+        <p>
+            {{ form.czy_uwagi.label }}<br>
+            {{ form.czy_uwagi() }}<br>
+            {% for error in form.czy_uwagi.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.uwagi.label }}<br>
+            {{ form.uwagi(size=32) }}<br>
+            {% for error in form.uwagi.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
         <p>{{ form.submit() }}</p>
     </form>
 {% endblock %}

@@ -39,27 +39,19 @@ def formularz_najmu():
 
 @app.route('/auto', methods = ['GET', 'POST'])
 def formularz_auta():
-    form = UmowaAuto()
+    import json
+    with open("data.json", "r", encoding='utf-8') as f:
+        data_json = json.load(f)
+        from datetime import datetime
+
+        date_str = data_json["data_zawarcia"]
+        date_obj = datetime.strptime(date_str, "%Y-%m-%d")
+        data_json["data_zawarcia"] = date_obj
+
+    form = UmowaAuto(**data_json)
+    
     if form.validate_on_submit():
-        data = {
-
-            'miejsce_zawarcia': form.miejsce_zawarcia.data,
-            'data_zawarcia': form.data_zawarcia.data,
-            'imie_sprzedajacego': form.imie_sprzedajacego.data,
-            'nazwisko_sprzedajacego': form.nazwisko_sprzedajacego.data,
-            'pesel_sprzedajacego': form.pesel_sprzedajacego.data,
-            'imie_kupujacego': form.imie_kupujacego.data,
-            'nazwisko_kupujacego': form.nazwisko_kupujacego.data,
-            'pesel_kupujacego': form.pesel_kupujacego.data,
-            'marka_auta': form.marka_auta.data,
-            'model_auta': form.model_auta.data,
-            'rok_produkcji': form.rok_produkcji.data,
-            'numer_rejestracyjny': form.numer_rejestracyjny.data,
-            'przebieg': form.przebieg.data,
-            'numer_vim': form.numer_vim.data,
-            'cena': form.cena.data,
-
-        }
+        data = form.data
         return create_pdf_pojazd(data)
     return render_template('umowa_auto.html', title='Umowa Sprzedaży Pojazdu', form=form)
 

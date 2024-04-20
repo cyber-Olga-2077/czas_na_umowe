@@ -180,21 +180,21 @@
             {% endfor %}
         </p>
 
-    <p>
-        {{ form.przebieg_start.label }}<br>
-        {{ form.przebieg_start(size=32) }}<br>
-        {% for error in form.przebieg_start.errors %}
-        <span style="color: red;">[{{ error }}]</span>
-        {% endfor %}
-    </p>
+        <p>
+            {{ form.czy_przebieg.label }}<br>
+            {{ form.czy_przebieg() }}<br>
+            {% for error in form.czy_przebieg.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
 
-    <p>
-        {{ form.przebieg_pokonany.label }}<br>
-        {{ form.przebieg_pokonany(size=32) }}<br>
-        {% for error in form.przebieg_pokonany.errors %}
-        <span style="color: red;">[{{ error }}]</span>
-        {% endfor %}
-    </p>
+        <p>
+            {{ form.przebieg.label }}<br>
+            {{ form.przebieg(size=32) }}<br>
+            {% for error in form.przebieg.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
 
         <p>{{ form.submit() }}</p>
     </form>

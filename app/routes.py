@@ -48,34 +48,6 @@ def formularz_auta():
     form = UmowaAuto(**data_json)
     
     if form.validate_on_submit():
-        data = {
-            'miejsce_zawarcia': form.miejsce_zawarcia.data,
-            'data_zawarcia': form.data_zawarcia.data,
-            'imie_sprzedajacego': form.imie_sprzedajacego.data,
-            'nazwisko_sprzedajacego': form.nazwisko_sprzedajacego.data,
-            'miasto_sprzedajacego': form.miasto_sprzedajacego.data,
-            'ulica_sprzedajacego': form.ulica_sprzedajacego.data,
-            'numer_sprzedajacego': form.numer_sprzedajacego.data,
-            'pesel_sprzedajacego': form.pesel_sprzedajacego.data,
-            'dowod_sprzedajacego': form.dowod_sprzedajacego.data,
-            'wydawca_sprzedajacego': form.wydawca_sprzedajacego.data,
-            'imie_kupujacego': form.imie_kupujacego.data,
-            'nazwisko_kupujacego': form.nazwisko_kupujacego.data,
-            'miasto_kupujacego': form.miasto_kupujacego.data,
-            'ulica_kupujacego': form.ulica_kupujacego.data,
-            'numer_kupujacego': form.numer_kupujacego.data,
-            'pesel_kupujacego': form.pesel_kupujacego.data,
-            'dowod_kupujacego': form.dowod_kupujacego.data,
-            'wydawca_kupujacego': form.wydawca_kupujacego.data,
-            'marka_auta': form.marka_auta.data,
-            'model_auta': form.model_auta.data,
-            'rok_produkcji': form.rok_produkcji.data,
-            'numer_rejestracyjny': form.numer_rejestracyjny.data,
-            'numer_vin': form.numer_vin.data,
-            'cena': form.cena.data,
-            'przebieg_start': form.przebieg_start.data,
-            'przebieg_pokonany': form.przebieg_pokonany.data,
-
-        }
+        data = form.data
         return create_pdf_pojazd(data)
     return render_template('umowa_auto.html', title='Umowa Sprzedaży Pojazdu', form=form)

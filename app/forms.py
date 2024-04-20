@@ -48,6 +48,6 @@ class UmowaAuto(FlaskForm):
     numer_rejestracyjny = StringField('Numer rejestracyjny', validators=[DataRequired()])
     numer_vin = StringField('Numer VIN (nr nadwozia)', validators=[DataRequired()])
     cena = StringField('Cena', validators=[DataRequired()])
-    przebieg_start = StringField('Przebieg w chwili nabycia przez sprzedającego') #Nie jest konieczne
-    przebieg_pokonany= StringField('Przebieg pokonany przez sprzedającego') #Nie jest konieczne
+    czy_przebieg = BooleanField('Czy chcesz dodać informację o przebiegu?')
+    przebieg = StringField('Przebieg w chwili nabycia przez sprzedającego')
     submit = SubmitField('Utwórz umowę sprzedaży auta')

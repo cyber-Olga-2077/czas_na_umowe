@@ -23,6 +23,5 @@
     "numer_rejestracyjny": "KR12345",
     "numer_vin": "1234567890ABCDEF",
     "cena": "35000",
-    "przebieg_start": "50000",
-    "przebieg_pokonany": "10000"
+    "przebieg": "50000"
 }

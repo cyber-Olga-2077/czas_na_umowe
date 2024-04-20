@@ -4,6 +4,9 @@ from app.forms import UmowaNajmu
 from app.creating_pdf import create_pdf_najem
 from app.forms import UmowaAuto
 from app.creating_pdf import create_pdf_pojazd
+from app.forms import UmowaKupno
+from app.creating_pdf import create_pdf_kupno
+
 
 @app.route('/')
 @app.route('/index')
@@ -51,3 +54,21 @@ def formularz_auta():
         data = form.data
         return create_pdf_pojazd(data)
     return render_template('umowa_auto.html', title='Umowa Sprzedaży Pojazdu', form=form)
+
+
+@app.route('/kupno', methods=['GET', 'POST'])
+def formularz_kupno():
+    form = UmowaKupno()
+    if form.validate_on_submit():
+        data = {
+            'miejsce_zawarcia': form.miejsce_zawarcia.data,
+            'data_zawarcia': form.data_zawarcia.data,
+            'imie_sprzedajacego': form.imie_sprzedajacego.data,
+            'nazwisko_sprzedajacego': form.nazwisko_sprzedajacego.data,
+            'pesel_sprzedajacego': form.pesel_sprzedajacego.data,
+            'imie_kupujacego': form.imie_kupujacego.data,
+            'nazwisko_kupujacego': form.nazwisko_kupujacego.data,
+            'pesel_kupujacego': form.pesel_kupujacego.data,
+        }
+        return create_pdf_kupno(data)
+    return render_template('umowa_kupno.html', title='Umowa Kupna', form=form)
